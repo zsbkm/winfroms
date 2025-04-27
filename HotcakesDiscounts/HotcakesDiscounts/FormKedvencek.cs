@@ -39,6 +39,10 @@ namespace HotcakesDiscounts
             Api proxy = ApiCall();
 
             var response = proxy.WishListItemsFindAll();
+            var responseProducts = proxy.ProductsFindAll();
+
+
+
 
             if (response == null || response.Content == null || response.Content.Count == 0)
             {
@@ -58,15 +62,29 @@ namespace HotcakesDiscounts
 
             // DataTable létrehozása
             DataTable tabla = new DataTable();
-            tabla.Columns.Add("ProductId", typeof(string));
-            tabla.Columns.Add("Count", typeof(int));
+            tabla.Columns.Add("TermékId", typeof(string));
+            tabla.Columns.Add("Termék neve", typeof(string));
+            tabla.Columns.Add("Összesen ennyiszer", typeof(int));
+            tabla.Columns.Add("Aktív kedvezmény", typeof(string));
 
             // DataTable feltöltése az összegzett adatokkal
             foreach (var prod in groupedProducts)
             {
                 var row = tabla.NewRow();
-                row["ProductId"] = prod.ProductId;
-                row["Count"] = prod.Count;
+                row["TermékId"] = prod.ProductId;
+
+                //Itt lekérdezem hogy az adott id melyik terméknévhez tartozik
+                foreach(var elem in responseProducts.Content)
+                {
+                    if(elem.Bvin == prod.ProductId)
+                    {
+                        row["Termék neve"] = elem.ProductName;
+                        break;
+                    }
+                }
+
+                row["Összesen ennyiszer"] = prod.Count;               
+
                 tabla.Rows.Add(row);
             }
 
