@@ -38,7 +38,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGetWishlist.Location = new System.Drawing.Point(300, 84);
             this.buttonGetWishlist.Name = "buttonGetWishlist";
-            this.buttonGetWishlist.Size = new System.Drawing.Size(293, 174);
+            this.buttonGetWishlist.Size = new System.Drawing.Size(381, 174);
             this.buttonGetWishlist.TabIndex = 0;
             this.buttonGetWishlist.Text = "Kedvencek lekérdezése";
             this.buttonGetWishlist.UseVisualStyleBackColor = true;
@@ -49,7 +49,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGetActiveDiscounts.Location = new System.Drawing.Point(300, 299);
             this.buttonGetActiveDiscounts.Name = "buttonGetActiveDiscounts";
-            this.buttonGetActiveDiscounts.Size = new System.Drawing.Size(293, 174);
+            this.buttonGetActiveDiscounts.Size = new System.Drawing.Size(381, 174);
             this.buttonGetActiveDiscounts.TabIndex = 1;
             this.buttonGetActiveDiscounts.Text = "Aktív kedvezmények lekérdezése";
             this.buttonGetActiveDiscounts.UseVisualStyleBackColor = true;
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 552);
+            this.ClientSize = new System.Drawing.Size(1000, 606);
             this.Controls.Add(this.buttonGetActiveDiscounts);
             this.Controls.Add(this.buttonGetWishlist);
             this.Name = "Form1";
