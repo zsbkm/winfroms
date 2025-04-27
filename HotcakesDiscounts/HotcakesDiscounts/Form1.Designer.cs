@@ -42,6 +42,7 @@
             this.buttonGetWishlist.TabIndex = 0;
             this.buttonGetWishlist.Text = "Kedvencek lekérdezése";
             this.buttonGetWishlist.UseVisualStyleBackColor = true;
+            this.buttonGetWishlist.Click += new System.EventHandler(this.buttonGetWishlist_Click);
             // 
             // buttonGetActiveDiscounts
             // 

@@ -36,6 +36,9 @@
     <Reference Include="Hotcakes.CommerceDTO">
       <HintPath>..\..\..\..\..\Downloads\Hotcakes.CommerceDTO.dll</HintPath>
     </Reference>
+    <Reference Include="Hotcakes.Web">
+      <HintPath>..\..\..\..\..\Downloads\Hotcakes.Web.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -58,10 +61,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKedvencek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKedvencek.Designer.cs">
+      <DependentUpon>FormKedvencek.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKedvencek.resx">
+      <DependentUpon>FormKedvencek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
