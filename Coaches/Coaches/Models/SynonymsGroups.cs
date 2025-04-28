@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Coaches.Models;
+
+public partial class SynonymsGroups
+{
+    public int SynonymsGroupId { get; set; }
+
+    public string SynonymsTags { get; set; } = null!;
+
+    public int PortalId { get; set; }
+
+    public string CultureCode { get; set; } = null!;
+
+    public int CreatedByUserId { get; set; }
+
+    public DateTime CreatedOnDate { get; set; }
+
+    public int LastModifiedByUserId { get; set; }
+
+    public DateTime LastModifiedOnDate { get; set; }
+}
