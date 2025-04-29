@@ -106,7 +106,7 @@ namespace Coaches
             FormEdit formEdit = new FormEdit();
             if (szemelyiEdzokBindingSource.Current == null)
             {
-                MessageBox.Show("Ninc kiválasztv sor");
+                MessageBox.Show("Nincs kiválasztv sor");
             }
             formEdit.szemelyiEdzok = szemelyiEdzokBindingSource.Current as SzemelyiEdzok;
             if (formEdit.ShowDialog() == DialogResult.OK)
@@ -121,30 +121,55 @@ namespace Coaches
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             var kivalasztott = szemelyiEdzokBindingSource.Current as SzemelyiEdzok;
-            if (kivalasztott == null)
+
+            if (kivalasztott != null)
             {
-                MessageBox.Show("Ninc kiválasztv sor");
-            }
+                bool szerepel = _context.Foglalasok.Any(f => f.SzemelyiEdzoId == kivalasztott.Id);
 
-            var confirmResult = MessageBox.Show(
-                $"Biztosan törölni szeretnéd {kivalasztott.Nev} rekordját?",
-                "Megerõsítés",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
-            if (confirmResult == DialogResult.Yes)
-            {
-                var del = (from x in _context.SzemelyiEdzok
-                           where x.Id == kivalasztott.Id
-                           select x).FirstOrDefault();
-
-                if (del != null)
+                if (szerepel)
                 {
-                    _context.Remove(del);
-                    Mentes();
-                    EdzokBetoltese();
+                    var confirmResult = MessageBox.Show(
+                       $"{kivalasztott.Nev} nem törölhetõ, mert már szerepel a Foglalások táblában!\nEl szeretnéd rejteni a weboldalról?",
+                       "Érvénytelen mûvelet",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Warning);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        kivalasztott.Aktiv = false;
+                    }
+
+
+                }
+                else
+                {
+                    if (kivalasztott == null)
+                    {
+                        MessageBox.Show("Ninc kiválasztva sor");
+                    }
+
+                    var confirmResult = MessageBox.Show(
+                        $"Biztosan törölni szeretnéd {kivalasztott.Nev} rekordját?",
+                        "Megerõsítés",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        var del = (from x in _context.SzemelyiEdzok
+                                    where x.Id == kivalasztott.Id
+                                    select x).FirstOrDefault();
+
+                        if (del != null)
+                        {
+                            _context.Remove(del);
+                            Mentes();
+                            EdzokBetoltese();
+                        }
+                    }
                 }
             }
+
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
