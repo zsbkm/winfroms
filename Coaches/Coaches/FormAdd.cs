@@ -23,7 +23,7 @@ namespace Coaches
 
         private void FormAdd_Load(object sender, EventArgs e)
         {
-            
+
             bindingSource1.DataSource = ujEdzo;
 
             var maxDnnId = (from x in _context.SzemelyiEdzok
@@ -31,8 +31,18 @@ namespace Coaches
 
             ujEdzo.DnnAzonosito = maxDnnId + 1;
             ujEdzo.Aktiv = true;
+        }
 
-
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                ujEdzo.Aktiv = true;
+            }
+            if (checkBox1.Checked == false)
+            {
+                ujEdzo.Aktiv = false;
+            }
 
         }
     }

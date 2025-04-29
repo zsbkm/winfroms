@@ -27,6 +27,22 @@ namespace Coaches
         private void FormEdit_Load(object sender, EventArgs e)
         {
             bindingSource1.DataSource = szemelyiEdzok;
+            szemelyiEdzok.Aktiv = true;
+
+
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                szemelyiEdzok.Aktiv = true;
+            }
+            if (checkBox1.Checked == false)
+            {
+                szemelyiEdzok.Aktiv = false;
+            }
         }
     }
 }

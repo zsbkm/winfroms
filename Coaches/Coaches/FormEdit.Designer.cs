@@ -60,6 +60,7 @@
             textBox13 = new TextBox();
             label14 = new Label();
             textBox14 = new TextBox();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
@@ -127,7 +128,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(12, 147);
             label3.Name = "label3";
-            label3.Size = new Size(73, 15);
+            label3.Size = new Size(72, 15);
             label3.TabIndex = 7;
             label3.Text = "Telefonszám";
             // 
@@ -280,7 +281,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(246, 9);
+            label12.Location = new Point(246, 4);
             label12.Name = "label12";
             label12.Size = new Size(43, 15);
             label12.TabIndex = 25;
@@ -289,7 +290,7 @@
             // textBox12
             // 
             textBox12.DataBindings.Add(new Binding("Text", bindingSource1, "Oraber", true));
-            textBox12.Location = new Point(246, 27);
+            textBox12.Location = new Point(246, 22);
             textBox12.Name = "textBox12";
             textBox12.Size = new Size(177, 23);
             textBox12.TabIndex = 24;
@@ -328,11 +329,25 @@
             textBox14.Size = new Size(409, 23);
             textBox14.TabIndex = 28;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            checkBox1.Location = new Point(246, 392);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(152, 19);
+            checkBox1.TabIndex = 31;
+            checkBox1.Text = "Jelenjen meg az oldalon";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // FormEdit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(667, 447);
+            Controls.Add(checkBox1);
             Controls.Add(label14);
             Controls.Add(textBox14);
             Controls.Add(label13);
@@ -404,5 +419,6 @@
         private TextBox textBox13;
         private Label label14;
         private TextBox textBox14;
+        private CheckBox checkBox1;
     }
 }

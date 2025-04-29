@@ -60,7 +60,7 @@
             label1 = new Label();
             textBox1 = new TextBox();
             buttonOk = new Button();
-            textBoxDNNid = new TextBox();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
@@ -105,7 +105,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(246, 15);
+            label12.Location = new Point(246, 10);
             label12.Name = "label12";
             label12.Size = new Size(43, 15);
             label12.TabIndex = 55;
@@ -114,7 +114,7 @@
             // textBox12
             // 
             textBox12.DataBindings.Add(new Binding("Text", bindingSource1, "Oraber", true));
-            textBox12.Location = new Point(246, 33);
+            textBox12.Location = new Point(246, 28);
             textBox12.Name = "textBox12";
             textBox12.Size = new Size(177, 23);
             textBox12.TabIndex = 54;
@@ -262,7 +262,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(12, 153);
             label3.Name = "label3";
-            label3.Size = new Size(73, 15);
+            label3.Size = new Size(72, 15);
             label3.TabIndex = 37;
             label3.Text = "Telefonszám";
             // 
@@ -328,21 +328,25 @@
             buttonOk.Text = "Ok";
             buttonOk.UseVisualStyleBackColor = true;
             // 
-            // textBoxDNNid
+            // checkBox1
             // 
-            textBoxDNNid.DataBindings.Add(new Binding("Text", bindingSource1, "DnnAzonosito", true));
-            textBoxDNNid.Location = new Point(12, 414);
-            textBoxDNNid.Name = "textBoxDNNid";
-            textBoxDNNid.Size = new Size(177, 23);
-            textBoxDNNid.TabIndex = 60;
-            textBoxDNNid.Visible = false;
+            checkBox1.AutoSize = true;
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            checkBox1.Location = new Point(246, 398);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(152, 19);
+            checkBox1.TabIndex = 60;
+            checkBox1.Text = "Jelenjen meg az oldalon";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // FormAdd
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(668, 450);
-            Controls.Add(textBoxDNNid);
+            Controls.Add(checkBox1);
             Controls.Add(label14);
             Controls.Add(textBox14);
             Controls.Add(label13);
@@ -413,6 +417,6 @@
         private TextBox textBox1;
         private Button buttonOk;
         private BindingSource bindingSource1;
-        private TextBox textBoxDNNid;
+        private CheckBox checkBox1;
     }
 }
