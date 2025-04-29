@@ -1,3 +1,5 @@
+using Coaches.Models;
+
 namespace Coaches
 {
     public partial class Form1 : Form
@@ -8,6 +10,7 @@ namespace Coaches
         {
             InitializeComponent();
             szemelyiEdzokBindingSource.DataSource = _context.SzemelyiEdzok.ToList();
+            label1.Text = "Edzõk szûrése:";
         }
 
         private void EdzokBetoltese()
@@ -30,7 +33,7 @@ namespace Coaches
         {
             EdzokBetoltese();
         }
-        private void Mentés()
+        private void Mentes()
         {
             try
             {
@@ -41,6 +44,24 @@ namespace Coaches
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void buttonAddNewCoach_Click(object sender, EventArgs e)
+        {
+            FormAddNew formAddNew = new FormAddNew();
+            formAddNew.ShowDialog();
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            FormEdit formEdit = new FormEdit();
+            formEdit.szemelyiEdzok = szemelyiEdzokBindingSource.Current as SzemelyiEdzok;
+            if (formEdit.ShowDialog() == DialogResult.OK) 
+            {
+                Mentes();
+            }
+
+            
         }
     }
 }

@@ -51,6 +51,8 @@
             szemelyiEdzokBindingSource = new BindingSource(components);
             label1 = new Label();
             textBoxEdzoSzuro = new TextBox();
+            buttonAddNewCoach = new Button();
+            buttonEdit = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)szemelyiEdzokBindingSource).BeginInit();
             SuspendLayout();
@@ -197,11 +199,33 @@
             textBoxEdzoSzuro.TabIndex = 2;
             textBoxEdzoSzuro.TextChanged += textBoxEdzoSzuro_TextChanged;
             // 
+            // buttonAddNewCoach
+            // 
+            buttonAddNewCoach.Location = new Point(15, 390);
+            buttonAddNewCoach.Name = "buttonAddNewCoach";
+            buttonAddNewCoach.Size = new Size(150, 42);
+            buttonAddNewCoach.TabIndex = 3;
+            buttonAddNewCoach.Text = "Új hozááadás";
+            buttonAddNewCoach.UseVisualStyleBackColor = true;
+            buttonAddNewCoach.Click += buttonAddNewCoach_Click;
+            // 
+            // buttonEdit
+            // 
+            buttonEdit.Location = new Point(200, 390);
+            buttonEdit.Name = "buttonEdit";
+            buttonEdit.Size = new Size(150, 42);
+            buttonEdit.TabIndex = 4;
+            buttonEdit.Text = "Szerkesztés";
+            buttonEdit.UseVisualStyleBackColor = true;
+            buttonEdit.Click += buttonEdit_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonEdit);
+            Controls.Add(buttonAddNewCoach);
             Controls.Add(textBoxEdzoSzuro);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
@@ -238,5 +262,7 @@
         private DataGridViewTextBoxColumn adoazonositoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn foglalasokDataGridViewTextBoxColumn;
         private BindingSource szemelyiEdzokBindingSource;
+        private Button buttonAddNewCoach;
+        private Button buttonEdit;
     }
 }
