@@ -31,6 +31,8 @@ namespace Coaches
 
             ujEdzo.DnnAzonosito = maxDnnId + 1;
             ujEdzo.Aktiv = true;
+
+            //this.BackColor = ColorTranslator.FromHtml("#bbd5bc");
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

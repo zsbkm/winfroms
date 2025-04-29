@@ -12,6 +12,7 @@ namespace Coaches
             InitializeComponent();
             szemelyiEdzokBindingSource.DataSource = _context.SzemelyiEdzok.ToList();
             //label1.Text = "Edzõk szûrése:";
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,6 +27,9 @@ namespace Coaches
             comboBox1.Items.Add("Oraber");
 
             comboBox1.SelectedIndex = 0;
+
+            //buttonDelete.BackColor = ColorTranslator.FromHtml("#ffc9bd");
+            //this.BackColor = ColorTranslator.FromHtml("#bbd5bc"); 
 
         }
 
@@ -68,6 +72,8 @@ namespace Coaches
             }
 
             szemelyiEdzokBindingSource.DataSource = query.ToList();
+            
+          
 
         }
 
@@ -92,6 +98,7 @@ namespace Coaches
 
         private void buttonAddNewCoach_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormAdd fan = new FormAdd();
             if (fan.ShowDialog() == DialogResult.OK)
             {
@@ -99,10 +106,12 @@ namespace Coaches
                 Mentes();
                 EdzokBetoltese();
             }
+            this.Show();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormEdit formEdit = new FormEdit();
             if (szemelyiEdzokBindingSource.Current == null)
             {
@@ -115,7 +124,7 @@ namespace Coaches
             }
             EdzokBetoltese();
 
-
+            this.Show();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

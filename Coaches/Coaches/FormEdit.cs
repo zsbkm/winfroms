@@ -29,6 +29,7 @@ namespace Coaches
             bindingSource1.DataSource = szemelyiEdzok;
             szemelyiEdzok.Aktiv = true;
 
+            //this.BackColor = ColorTranslator.FromHtml("#bbd5bc");
 
 
         }
