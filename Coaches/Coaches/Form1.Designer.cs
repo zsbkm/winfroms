@@ -232,7 +232,7 @@
             buttonAddNewCoach.Name = "buttonAddNewCoach";
             buttonAddNewCoach.Size = new Size(150, 42);
             buttonAddNewCoach.TabIndex = 3;
-            buttonAddNewCoach.Text = "Új hozááadása";
+            buttonAddNewCoach.Text = "Új edző hozááadása";
             buttonAddNewCoach.UseVisualStyleBackColor = true;
             buttonAddNewCoach.Click += buttonAddNewCoach_Click;
             // 
@@ -243,7 +243,7 @@
             buttonEdit.Name = "buttonEdit";
             buttonEdit.Size = new Size(150, 42);
             buttonEdit.TabIndex = 4;
-            buttonEdit.Text = "Szerkesztés";
+            buttonEdit.Text = "Edző szerkesztése";
             buttonEdit.UseVisualStyleBackColor = true;
             buttonEdit.Click += buttonEdit_Click;
             // 
@@ -254,7 +254,7 @@
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(150, 42);
             buttonDelete.TabIndex = 5;
-            buttonDelete.Text = "Törlés";
+            buttonDelete.Text = "Edző törlése";
             buttonDelete.UseVisualStyleBackColor = true;
             buttonDelete.Click += buttonDelete_Click;
             // 
