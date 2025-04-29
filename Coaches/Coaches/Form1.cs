@@ -1,4 +1,5 @@
 using Coaches.Models;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Coaches
 {
@@ -13,21 +14,64 @@ namespace Coaches
             //label1.Text = "Edzõk szûrése:";
         }
 
-        private void EdzokBetoltese()
-        {
-            var edzok = from x in _context.SzemelyiEdzok
-                        where x.Nev.ToLower().Contains(textBoxEdzoSzuro.Text.ToLower())
-                        orderby x.Nev
-                        select x;
-
-            szemelyiEdzokBindingSource.DataSource = edzok.ToList();
-            //szemelyiEdzokBindingSource.ResetCurrentItem();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            comboBox1.Items.Add("Id");
+            comboBox1.Items.Add("Nev");
+            comboBox1.Items.Add("Szulhely");
+            comboBox1.Items.Add("Szulido");
+            comboBox1.Items.Add("Sportok");
+            comboBox1.Items.Add("Napszak");
+            comboBox1.Items.Add("Aktiv");
+            comboBox1.Items.Add("Oraber");
+
+            comboBox1.SelectedIndex = 0;
 
         }
+
+        private void EdzokBetoltese()
+        {
+            var szuro = comboBox1.Text;
+
+            var query = _context.SzemelyiEdzok
+                .Where(x => x.Nev.ToLower().Contains(textBoxEdzoSzuro.Text.ToLower()));
+
+            switch (szuro)
+            {
+                case "Id":
+                    query = query.OrderBy(x => x.Id);
+                    break;
+                case "Nev":
+                    query = query.OrderBy(x => x.Nev);
+                    break;
+                case "Szulhely":
+                    query = query.OrderBy(x => x.SzulHely);
+                    break;
+                case "Szulido":
+                    query = query.OrderBy(x => x.Nev);
+                    break;
+                case "Sportok":
+                    query = query.OrderBy(x => x.Sportok);
+                    break;
+                case "Napszak":
+                    query = query.OrderBy(x => x.Napszak);
+                    break;
+                case "Aktiv":
+                    query = query.OrderBy(x => x.Aktiv);
+                    break;
+                case "Oraber":
+                    query = query.OrderBy(x => x.Oraber);
+                    break;
+                default:
+                    query = query.OrderBy(x => x.Nev); // Fallback
+                    break;
+            }
+
+            szemelyiEdzokBindingSource.DataSource = query.ToList();
+
+        }
+
+
 
         private void textBoxEdzoSzuro_TextChanged(object sender, EventArgs e)
         {
@@ -60,14 +104,57 @@ namespace Coaches
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             FormEdit formEdit = new FormEdit();
+            if (szemelyiEdzokBindingSource.Current == null)
+            {
+                MessageBox.Show("Ninc kiválasztv sor");
+            }
             formEdit.szemelyiEdzok = szemelyiEdzokBindingSource.Current as SzemelyiEdzok;
-            if (formEdit.ShowDialog() == DialogResult.OK) 
+            if (formEdit.ShowDialog() == DialogResult.OK)
             {
                 Mentes();
             }
             EdzokBetoltese();
 
-            
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var kivalasztott = szemelyiEdzokBindingSource.Current as SzemelyiEdzok;
+            if (kivalasztott == null)
+            {
+                MessageBox.Show("Ninc kiválasztv sor");
+            }
+
+            var confirmResult = MessageBox.Show(
+                $"Biztosan törölni szeretnéd {kivalasztott.Nev} rekordját?",
+                "Megerõsítés",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                var del = (from x in _context.SzemelyiEdzok
+                           where x.Id == kivalasztott.Id
+                           select x).FirstOrDefault();
+
+                if (del != null)
+                {
+                    _context.Remove(del);
+                    Mentes();
+                    EdzokBetoltese();
+                }
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EdzokBetoltese();
+        }
+
+        private void buttonKilep_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
