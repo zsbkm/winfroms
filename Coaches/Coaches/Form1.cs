@@ -10,7 +10,7 @@ namespace Coaches
         {
             InitializeComponent();
             szemelyiEdzokBindingSource.DataSource = _context.SzemelyiEdzok.ToList();
-            label1.Text = "Edzõk szûrése:";
+            //label1.Text = "Edzõk szûrése:";
         }
 
         private void EdzokBetoltese()
@@ -48,8 +48,13 @@ namespace Coaches
 
         private void buttonAddNewCoach_Click(object sender, EventArgs e)
         {
-            FormAddNew formAddNew = new FormAddNew();
-            formAddNew.ShowDialog();
+            FormAdd fan = new FormAdd();
+            if (fan.ShowDialog() == DialogResult.OK)
+            {
+                _context.SzemelyiEdzok.Add(fan.ujEdzo);
+                Mentes();
+                EdzokBetoltese();
+            }
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)

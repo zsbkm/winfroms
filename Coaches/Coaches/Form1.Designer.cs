@@ -59,12 +59,16 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nevDataGridViewTextBoxColumn, szulHelyDataGridViewTextBoxColumn, szulIdoDataGridViewTextBoxColumn, telefonszamDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, facebookDataGridViewTextBoxColumn, bioDataGridViewTextBoxColumn, mottoDataGridViewTextBoxColumn, sportokDataGridViewTextBoxColumn, dnnAzonositoDataGridViewTextBoxColumn, napszakDataGridViewTextBoxColumn, aktivDataGridViewTextBoxColumn, lakcimDataGridViewTextBoxColumn, oraberDataGridViewTextBoxColumn, bankszamlaszamDataGridViewTextBoxColumn, adoazonositoDataGridViewTextBoxColumn, foglalasokDataGridViewTextBoxColumn });
             dataGridView1.DataSource = szemelyiEdzokBindingSource;
             dataGridView1.Location = new Point(12, 63);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(776, 312);
             dataGridView1.TabIndex = 0;
@@ -74,102 +78,119 @@
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nevDataGridViewTextBoxColumn
             // 
             nevDataGridViewTextBoxColumn.DataPropertyName = "Nev";
             nevDataGridViewTextBoxColumn.HeaderText = "Nev";
             nevDataGridViewTextBoxColumn.Name = "nevDataGridViewTextBoxColumn";
+            nevDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // szulHelyDataGridViewTextBoxColumn
             // 
             szulHelyDataGridViewTextBoxColumn.DataPropertyName = "SzulHely";
             szulHelyDataGridViewTextBoxColumn.HeaderText = "SzulHely";
             szulHelyDataGridViewTextBoxColumn.Name = "szulHelyDataGridViewTextBoxColumn";
+            szulHelyDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // szulIdoDataGridViewTextBoxColumn
             // 
             szulIdoDataGridViewTextBoxColumn.DataPropertyName = "SzulIdo";
             szulIdoDataGridViewTextBoxColumn.HeaderText = "SzulIdo";
             szulIdoDataGridViewTextBoxColumn.Name = "szulIdoDataGridViewTextBoxColumn";
+            szulIdoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefonszamDataGridViewTextBoxColumn
             // 
             telefonszamDataGridViewTextBoxColumn.DataPropertyName = "Telefonszam";
             telefonszamDataGridViewTextBoxColumn.HeaderText = "Telefonszam";
             telefonszamDataGridViewTextBoxColumn.Name = "telefonszamDataGridViewTextBoxColumn";
+            telefonszamDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             emailDataGridViewTextBoxColumn.HeaderText = "Email";
             emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // facebookDataGridViewTextBoxColumn
             // 
             facebookDataGridViewTextBoxColumn.DataPropertyName = "Facebook";
             facebookDataGridViewTextBoxColumn.HeaderText = "Facebook";
             facebookDataGridViewTextBoxColumn.Name = "facebookDataGridViewTextBoxColumn";
+            facebookDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bioDataGridViewTextBoxColumn
             // 
             bioDataGridViewTextBoxColumn.DataPropertyName = "Bio";
             bioDataGridViewTextBoxColumn.HeaderText = "Bio";
             bioDataGridViewTextBoxColumn.Name = "bioDataGridViewTextBoxColumn";
+            bioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // mottoDataGridViewTextBoxColumn
             // 
             mottoDataGridViewTextBoxColumn.DataPropertyName = "Motto";
             mottoDataGridViewTextBoxColumn.HeaderText = "Motto";
             mottoDataGridViewTextBoxColumn.Name = "mottoDataGridViewTextBoxColumn";
+            mottoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sportokDataGridViewTextBoxColumn
             // 
             sportokDataGridViewTextBoxColumn.DataPropertyName = "Sportok";
             sportokDataGridViewTextBoxColumn.HeaderText = "Sportok";
             sportokDataGridViewTextBoxColumn.Name = "sportokDataGridViewTextBoxColumn";
+            sportokDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dnnAzonositoDataGridViewTextBoxColumn
             // 
             dnnAzonositoDataGridViewTextBoxColumn.DataPropertyName = "DnnAzonosito";
             dnnAzonositoDataGridViewTextBoxColumn.HeaderText = "DnnAzonosito";
             dnnAzonositoDataGridViewTextBoxColumn.Name = "dnnAzonositoDataGridViewTextBoxColumn";
+            dnnAzonositoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // napszakDataGridViewTextBoxColumn
             // 
             napszakDataGridViewTextBoxColumn.DataPropertyName = "Napszak";
             napszakDataGridViewTextBoxColumn.HeaderText = "Napszak";
             napszakDataGridViewTextBoxColumn.Name = "napszakDataGridViewTextBoxColumn";
+            napszakDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // aktivDataGridViewTextBoxColumn
             // 
             aktivDataGridViewTextBoxColumn.DataPropertyName = "Aktiv";
             aktivDataGridViewTextBoxColumn.HeaderText = "Aktiv";
             aktivDataGridViewTextBoxColumn.Name = "aktivDataGridViewTextBoxColumn";
+            aktivDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lakcimDataGridViewTextBoxColumn
             // 
             lakcimDataGridViewTextBoxColumn.DataPropertyName = "Lakcim";
             lakcimDataGridViewTextBoxColumn.HeaderText = "Lakcim";
             lakcimDataGridViewTextBoxColumn.Name = "lakcimDataGridViewTextBoxColumn";
+            lakcimDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oraberDataGridViewTextBoxColumn
             // 
             oraberDataGridViewTextBoxColumn.DataPropertyName = "Oraber";
             oraberDataGridViewTextBoxColumn.HeaderText = "Oraber";
             oraberDataGridViewTextBoxColumn.Name = "oraberDataGridViewTextBoxColumn";
+            oraberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bankszamlaszamDataGridViewTextBoxColumn
             // 
             bankszamlaszamDataGridViewTextBoxColumn.DataPropertyName = "Bankszamlaszam";
             bankszamlaszamDataGridViewTextBoxColumn.HeaderText = "Bankszamlaszam";
             bankszamlaszamDataGridViewTextBoxColumn.Name = "bankszamlaszamDataGridViewTextBoxColumn";
+            bankszamlaszamDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // adoazonositoDataGridViewTextBoxColumn
             // 
             adoazonositoDataGridViewTextBoxColumn.DataPropertyName = "Adoazonosito";
             adoazonositoDataGridViewTextBoxColumn.HeaderText = "Adoazonosito";
             adoazonositoDataGridViewTextBoxColumn.Name = "adoazonositoDataGridViewTextBoxColumn";
+            adoazonositoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // foglalasokDataGridViewTextBoxColumn
             // 
@@ -177,6 +198,7 @@
             foglalasokDataGridViewTextBoxColumn.HeaderText = "Foglalasok";
             foglalasokDataGridViewTextBoxColumn.Name = "foglalasokDataGridViewTextBoxColumn";
             foglalasokDataGridViewTextBoxColumn.ReadOnly = true;
+            foglalasokDataGridViewTextBoxColumn.Visible = false;
             // 
             // szemelyiEdzokBindingSource
             // 
@@ -187,9 +209,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 16);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(79, 15);
             label1.TabIndex = 1;
-            label1.Text = "label1";
+            label1.Text = "Edző keresése";
             // 
             // textBoxEdzoSzuro
             // 
@@ -201,6 +223,7 @@
             // 
             // buttonAddNewCoach
             // 
+            buttonAddNewCoach.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonAddNewCoach.Location = new Point(15, 390);
             buttonAddNewCoach.Name = "buttonAddNewCoach";
             buttonAddNewCoach.Size = new Size(150, 42);
@@ -211,6 +234,7 @@
             // 
             // buttonEdit
             // 
+            buttonEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonEdit.Location = new Point(200, 390);
             buttonEdit.Name = "buttonEdit";
             buttonEdit.Size = new Size(150, 42);
@@ -243,6 +267,9 @@
         private DataGridView dataGridView1;
         private Label label1;
         private TextBox textBoxEdzoSzuro;
+        private BindingSource szemelyiEdzokBindingSource;
+        private Button buttonAddNewCoach;
+        private Button buttonEdit;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nevDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn szulHelyDataGridViewTextBoxColumn;
@@ -261,8 +288,5 @@
         private DataGridViewTextBoxColumn bankszamlaszamDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn adoazonositoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn foglalasokDataGridViewTextBoxColumn;
-        private BindingSource szemelyiEdzokBindingSource;
-        private Button buttonAddNewCoach;
-        private Button buttonEdit;
     }
 }
