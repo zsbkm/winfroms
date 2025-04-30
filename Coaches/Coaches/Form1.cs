@@ -13,7 +13,7 @@ namespace Coaches
             InitializeComponent();
             szemelyiEdzokBindingSource.DataSource = _context.SzemelyiEdzok.ToList();
             //label1.Text = "Edzõk szûrése:";
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -73,8 +73,8 @@ namespace Coaches
             }
 
             szemelyiEdzokBindingSource.DataSource = query.ToList();
-            
-          
+
+
 
         }
 
@@ -99,34 +99,34 @@ namespace Coaches
 
         private void buttonAddNewCoach_Click(object sender, EventArgs e)
         {
-             var confirmResult = MessageBox.Show(
-                        $"Elõször regisztrálni kell az edzõt a weboldalon, ezt megtette már?",
-                        "Érvénytelen mûvelet",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning);
-             if (confirmResult == DialogResult.Yes)
-             {
-                 this.Hide();
-                 FormAdd fan = new FormAdd();
-                 if (fan.ShowDialog() == DialogResult.OK)
-                 {
+            var confirmResult = MessageBox.Show(
+                       $"Elõször regisztrálni kell az edzõt a weboldalon, ezt megtette már?",
+                       "Érvénytelen mûvelet",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Warning);
+            if (confirmResult == DialogResult.Yes)
+            {
+                this.Hide();
+                FormAdd fan = new FormAdd();
+                if (fan.ShowDialog() == DialogResult.OK)
+                {
 
-                     _context.SzemelyiEdzok.Add(fan.ujEdzo);
-                     Mentes();
-                     EdzokBetoltese();
-                 }
-             }
-             if(confirmResult == DialogResult.No)
-             {
-                 Process.Start(new ProcessStartInfo
-                 {
-                     FileName = "http://rendfejl1000.northeurope.cloudapp.azure.com:8080/Regisztracio?returnurl=http%3a%2f%2frendfejl1000.northeurope.cloudapp.azure.com%3a8080%2f",
-                     UseShellExecute = true
-                 });
-             } 
-            
-            
-            
+                    _context.SzemelyiEdzok.Add(fan.ujEdzo);
+                    Mentes();
+                    EdzokBetoltese();
+                }
+            }
+            if (confirmResult == DialogResult.No)
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "http://rendfejl1000.northeurope.cloudapp.azure.com:8080/Regisztracio?returnurl=http%3a%2f%2frendfejl1000.northeurope.cloudapp.azure.com%3a8080%2f",
+                    UseShellExecute = true
+                });
+            }
+
+
+
             this.Show();
         }
 
@@ -186,8 +186,8 @@ namespace Coaches
                     if (confirmResult == DialogResult.Yes)
                     {
                         var del = (from x in _context.SzemelyiEdzok
-                                    where x.Id == kivalasztott.Id
-                                    select x).FirstOrDefault();
+                                   where x.Id == kivalasztott.Id
+                                   select x).FirstOrDefault();
 
                         if (del != null)
                         {
@@ -199,7 +199,7 @@ namespace Coaches
                 }
             }
 
-            
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -210,8 +210,16 @@ namespace Coaches
         private void buttonKilep_Click(object sender, EventArgs e)
         {
             this.Close();
+           Application.Exit();  
         }
-   
-    
-}
+
+        private void buttonBerszamfejtes_Click(object sender, EventArgs e)
+        {
+            FormBerszamfejtes bsz = new();
+            if(bsz.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Close();
+            }
+        }
+    }
 }

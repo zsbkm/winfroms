@@ -87,7 +87,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(339, 254);
+            dataGridView1.Size = new Size(351, 254);
             dataGridView1.TabIndex = 0;
             // 
             // userIdDataGridViewTextBoxColumn
