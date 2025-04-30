@@ -64,16 +64,18 @@
             label15 = new Label();
             textBoxDNN = new TextBox();
             buttonDNN = new Button();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label14.Location = new Point(246, 121);
             label14.Name = "label14";
-            label14.Size = new Size(89, 17);
+            label14.Size = new Size(92, 17);
             label14.TabIndex = 59;
             label14.Text = "Adóazonosító";
             // 
@@ -94,10 +96,10 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label13.Location = new Point(246, 67);
             label13.Name = "label13";
-            label13.Size = new Size(105, 17);
+            label13.Size = new Size(110, 17);
             label13.TabIndex = 57;
             label13.Text = "Bankszámlaszám";
             // 
@@ -114,7 +116,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label12.Location = new Point(246, 11);
             label12.Name = "label12";
             label12.Size = new Size(50, 17);
@@ -130,14 +132,15 @@
             textBox12.Name = "textBox12";
             textBox12.Size = new Size(177, 25);
             textBox12.TabIndex = 9;
+            textBox12.Validating += textBox12_Validating;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label11.Location = new Point(246, 173);
             label11.Name = "label11";
-            label11.Size = new Size(47, 17);
+            label11.Size = new Size(49, 17);
             label11.TabIndex = 53;
             label11.Text = "Lakcím";
             // 
@@ -154,10 +157,10 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label10.Location = new Point(12, 388);
             label10.Name = "label10";
-            label10.Size = new Size(58, 17);
+            label10.Size = new Size(59, 17);
             label10.TabIndex = 51;
             label10.Text = "Napszak";
             // 
@@ -174,10 +177,10 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label9.Location = new Point(12, 333);
             label9.Name = "label9";
-            label9.Size = new Size(54, 17);
+            label9.Size = new Size(56, 17);
             label9.TabIndex = 49;
             label9.Text = "Sportok";
             // 
@@ -194,10 +197,10 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label8.Location = new Point(246, 388);
             label8.Name = "label8";
-            label8.Size = new Size(44, 17);
+            label8.Size = new Size(46, 17);
             label8.TabIndex = 47;
             label8.Text = "Mottó";
             // 
@@ -215,10 +218,10 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.Location = new Point(246, 226);
             label7.Name = "label7";
-            label7.Size = new Size(26, 17);
+            label7.Size = new Size(27, 17);
             label7.TabIndex = 45;
             label7.Text = "Bio";
             // 
@@ -236,10 +239,10 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label6.Location = new Point(12, 280);
             label6.Name = "label6";
-            label6.Size = new Size(64, 17);
+            label6.Size = new Size(66, 17);
             label6.TabIndex = 43;
             label6.Text = "Facebook";
             // 
@@ -256,10 +259,10 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(12, 226);
             label5.Name = "label5";
-            label5.Size = new Size(39, 17);
+            label5.Size = new Size(40, 17);
             label5.TabIndex = 41;
             label5.Text = "Email";
             // 
@@ -272,14 +275,15 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(177, 25);
             textBox5.TabIndex = 5;
+            textBox5.Validating += textBox5_Validating;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(12, 121);
             label4.Name = "label4";
-            label4.Size = new Size(81, 17);
+            label4.Size = new Size(83, 17);
             label4.TabIndex = 39;
             label4.Text = "Születési idő";
             // 
@@ -296,10 +300,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(12, 173);
             label3.Name = "label3";
-            label3.Size = new Size(80, 17);
+            label3.Size = new Size(82, 17);
             label3.TabIndex = 37;
             label3.Text = "Telefonszám";
             // 
@@ -316,10 +320,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(12, 66);
             label2.Name = "label2";
-            label2.Size = new Size(85, 17);
+            label2.Size = new Size(89, 17);
             label2.TabIndex = 35;
             label2.Text = "Születési hely";
             // 
@@ -348,10 +352,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(12, 11);
             label1.Name = "label1";
-            label1.Size = new Size(31, 17);
+            label1.Size = new Size(32, 17);
             label1.TabIndex = 32;
             label1.Text = "Név";
             // 
@@ -364,6 +368,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(177, 25);
             textBox1.TabIndex = 1;
+            textBox1.Validating += textBox1_Validating;
             // 
             // buttonOk
             // 
@@ -374,7 +379,7 @@
             buttonOk.Name = "buttonOk";
             buttonOk.Size = new Size(87, 31);
             buttonOk.TabIndex = 17;
-            buttonOk.Text = "Ok";
+            buttonOk.Text = "Mentés";
             buttonOk.UseVisualStyleBackColor = true;
             buttonOk.Click += buttonOk_Click;
             // 
@@ -383,10 +388,10 @@
             checkBox1.AutoSize = true;
             checkBox1.Checked = true;
             checkBox1.CheckState = CheckState.Checked;
-            checkBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             checkBox1.Location = new Point(246, 451);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(168, 21);
+            checkBox1.Size = new Size(172, 21);
             checkBox1.TabIndex = 16;
             checkBox1.Text = "Jelenjen meg az oldalon";
             checkBox1.UseVisualStyleBackColor = true;
@@ -395,9 +400,10 @@
             // label15
             // 
             label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label15.Location = new Point(443, 11);
             label15.Name = "label15";
-            label15.Size = new Size(95, 17);
+            label15.Size = new Size(98, 17);
             label15.TabIndex = 60;
             label15.Text = "DNNAzonosító";
             // 
@@ -407,19 +413,24 @@
             textBoxDNN.Name = "textBoxDNN";
             textBoxDNN.Size = new Size(95, 25);
             textBoxDNN.TabIndex = 10;
+            textBoxDNN.Validating += textBoxDNN_Validating;
             // 
             // buttonDNN
             // 
             buttonDNN.BackColor = Color.Snow;
             buttonDNN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonDNN.ForeColor = Color.Black;
-            buttonDNN.Location = new Point(544, 32);
+            buttonDNN.Location = new Point(559, 32);
             buttonDNN.Name = "buttonDNN";
             buttonDNN.Size = new Size(63, 23);
             buttonDNN.TabIndex = 62;
             buttonDNN.Text = "Lekérdez";
             buttonDNN.UseVisualStyleBackColor = false;
             buttonDNN.Click += buttonDNN_Click;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // FormAdd
             // 
@@ -467,6 +478,7 @@
             Text = "FormAdd";
             Load += FormAdd_Load;
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -507,5 +519,6 @@
         private Label label15;
         private TextBox textBoxDNN;
         private Button buttonDNN;
+        private ErrorProvider errorProvider1;
     }
 }
