@@ -386,7 +386,7 @@
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
-            button1.Text = "Bezár";
+            button1.Text = "Bezárás";
             button1.UseVisualStyleBackColor = true;
             // 
             // textBoxEdzoSzuro

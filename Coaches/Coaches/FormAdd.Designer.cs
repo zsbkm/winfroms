@@ -373,8 +373,8 @@
             buttonOk.Location = new Point(568, 469);
             buttonOk.Name = "buttonOk";
             buttonOk.Size = new Size(87, 31);
-            buttonOk.TabIndex = 18;
-            buttonOk.Text = "Mentés";
+            buttonOk.TabIndex = 17;
+            buttonOk.Text = "Ok";
             buttonOk.UseVisualStyleBackColor = true;
             buttonOk.Click += buttonOk_Click;
             // 
