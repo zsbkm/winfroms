@@ -110,6 +110,7 @@ namespace Coaches
                  FormAdd fan = new FormAdd();
                  if (fan.ShowDialog() == DialogResult.OK)
                  {
+
                      _context.SzemelyiEdzok.Add(fan.ujEdzo);
                      Mentes();
                      EdzokBetoltese();

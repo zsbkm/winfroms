@@ -29,7 +29,7 @@ namespace Coaches
             var maxDnnId = (from x in _context.SzemelyiEdzok
                             select x.DnnAzonosito).Max();
 
-            ujEdzo.DnnAzonosito = int.Parse(textBoxDNN.Text);
+
             ujEdzo.Aktiv = true;
 
             //this.BackColor = ColorTranslator.FromHtml("#bbd5bc");
@@ -51,11 +51,16 @@ namespace Coaches
         private void buttonDNN_Click(object sender, EventArgs e)
         {
             FormDNNUsers formDNNUsers = new FormDNNUsers();
-            
-            if(formDNNUsers.ShowDialog() == DialogResult.OK)
+
+            if (formDNNUsers.ShowDialog() == DialogResult.OK)
             {
                 formDNNUsers.Close();
             }
+        }
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            ujEdzo.DnnAzonosito = int.Parse(textBoxDNN.Text);
         }
     }
 }

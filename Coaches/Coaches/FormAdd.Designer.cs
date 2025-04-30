@@ -376,6 +376,7 @@
             buttonOk.TabIndex = 17;
             buttonOk.Text = "Ok";
             buttonOk.UseVisualStyleBackColor = true;
+            buttonOk.Click += buttonOk_Click;
             // 
             // checkBox1
             // 
