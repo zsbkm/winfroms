@@ -82,7 +82,7 @@ namespace Coaches
                         Edző = g.Key.Nev,
                         Órabér = g.Key.Oraber + " Ft",
                         Foglalások = g.Count(),
-                        Összesen = g.Count() * g.Key.Oraber + " Ft"
+                        BruttóBér = g.Count() * g.Key.Oraber + " Ft"
                     })
                     .ToList();
 
@@ -109,7 +109,7 @@ namespace Coaches
                     saveFileDialog.Filter = "Excel fájlok (*.xlsx)|*.xlsx|Összes fájl (*.*)|*.*";
                     saveFileDialog.Title = "Excel fájl mentése";
                     saveFileDialog.DefaultExt = "xlsx";
-                    saveFileDialog.FileName = $"Berszamfejtes_{DateTime.Now:yyyyMMdd}.xlsx";
+                    saveFileDialog.FileName = $"Berszamfejtes_{comboBoxHonap.SelectedItem}.xlsx";
 
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
