@@ -32,6 +32,7 @@
             comboBoxHonap = new ComboBox();
             label1 = new Label();
             buttonExport = new Button();
+            buttonBezaras = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 81);
             dataGridView1.Name = "dataGridView1";
@@ -69,19 +70,35 @@
             // 
             // buttonExport
             // 
+            buttonExport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonExport.BackColor = Color.SlateGray;
             buttonExport.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonExport.Location = new Point(12, 382);
+            buttonExport.ForeColor = Color.White;
+            buttonExport.Location = new Point(382, 12);
             buttonExport.Name = "buttonExport";
             buttonExport.Size = new Size(204, 56);
             buttonExport.TabIndex = 3;
             buttonExport.Text = "Exportálás excelbe";
-            buttonExport.UseVisualStyleBackColor = true;
+            buttonExport.UseVisualStyleBackColor = false;
+            buttonExport.Click += buttonExport_Click;
+            // 
+            // buttonBezaras
+            // 
+            buttonBezaras.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonBezaras.Location = new Point(477, 407);
+            buttonBezaras.Name = "buttonBezaras";
+            buttonBezaras.Size = new Size(109, 31);
+            buttonBezaras.TabIndex = 4;
+            buttonBezaras.Text = "Bezárás";
+            buttonBezaras.UseVisualStyleBackColor = true;
+            buttonBezaras.Click += buttonBezaras_Click;
             // 
             // FormBerszamfejtes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(598, 450);
+            Controls.Add(buttonBezaras);
             Controls.Add(buttonExport);
             Controls.Add(label1);
             Controls.Add(comboBoxHonap);
@@ -100,5 +117,6 @@
         private ComboBox comboBoxHonap;
         private Label label1;
         private Button buttonExport;
+        private Button buttonBezaras;
     }
 }
