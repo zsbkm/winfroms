@@ -29,7 +29,7 @@ namespace Coaches
             var maxDnnId = (from x in _context.SzemelyiEdzok
                             select x.DnnAzonosito).Max();
 
-            ujEdzo.DnnAzonosito = maxDnnId + 1;
+            ujEdzo.DnnAzonosito = int.Parse(textBoxDNN.Text);
             ujEdzo.Aktiv = true;
 
             //this.BackColor = ColorTranslator.FromHtml("#bbd5bc");
