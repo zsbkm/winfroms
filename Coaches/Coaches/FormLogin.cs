@@ -16,7 +16,7 @@ namespace Coaches
         {
             InitializeComponent();
             textBox2.PasswordChar = '●';
-
+            this.AcceptButton = button1;
 
             int xPosition = (this.ClientSize.Width - label3.Width) / 2;
 

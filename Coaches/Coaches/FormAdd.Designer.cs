@@ -85,7 +85,7 @@
             textBox14.Location = new Point(246, 142);
             textBox14.Name = "textBox14";
             textBox14.Size = new Size(409, 25);
-            textBox14.TabIndex = 11;
+            textBox14.TabIndex = 12;
             // 
             // bindingSource1
             // 
@@ -109,7 +109,7 @@
             textBox13.Location = new Point(246, 87);
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(409, 25);
-            textBox13.TabIndex = 10;
+            textBox13.TabIndex = 11;
             // 
             // label12
             // 
@@ -149,7 +149,7 @@
             textBox11.Location = new Point(246, 194);
             textBox11.Name = "textBox11";
             textBox11.Size = new Size(409, 25);
-            textBox11.TabIndex = 12;
+            textBox11.TabIndex = 13;
             // 
             // label10
             // 
@@ -210,7 +210,7 @@
             textBox8.Multiline = true;
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(409, 26);
-            textBox8.TabIndex = 14;
+            textBox8.TabIndex = 15;
             // 
             // label7
             // 
@@ -231,7 +231,7 @@
             textBox7.Multiline = true;
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(409, 133);
-            textBox7.TabIndex = 13;
+            textBox7.TabIndex = 14;
             // 
             // label6
             // 
@@ -341,7 +341,7 @@
             buttonCancel.Location = new Point(475, 469);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(87, 31);
-            buttonCancel.TabIndex = 16;
+            buttonCancel.TabIndex = 17;
             buttonCancel.Text = "Mégse";
             buttonCancel.UseVisualStyleBackColor = true;
             // 
@@ -373,7 +373,7 @@
             buttonOk.Location = new Point(568, 469);
             buttonOk.Name = "buttonOk";
             buttonOk.Size = new Size(87, 31);
-            buttonOk.TabIndex = 17;
+            buttonOk.TabIndex = 18;
             buttonOk.Text = "Ok";
             buttonOk.UseVisualStyleBackColor = true;
             buttonOk.Click += buttonOk_Click;
@@ -387,7 +387,7 @@
             checkBox1.Location = new Point(246, 451);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(168, 21);
-            checkBox1.TabIndex = 15;
+            checkBox1.TabIndex = 16;
             checkBox1.Text = "Jelenjen meg az oldalon";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
@@ -406,7 +406,7 @@
             textBoxDNN.Location = new Point(443, 32);
             textBoxDNN.Name = "textBoxDNN";
             textBoxDNN.Size = new Size(95, 25);
-            textBoxDNN.TabIndex = 61;
+            textBoxDNN.TabIndex = 10;
             // 
             // buttonDNN
             // 
