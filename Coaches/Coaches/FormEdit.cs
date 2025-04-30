@@ -92,5 +92,11 @@ namespace Coaches
             }
             else { errorProvider1.SetError(textBox12, string.Empty); }
         }
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            if (this.ValidateChildren())
+                this.DialogResult = DialogResult.OK;
+        }
     }
 }

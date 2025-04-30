@@ -77,6 +77,7 @@
             buttonOk.TabIndex = 17;
             buttonOk.Text = "Mentés";
             buttonOk.UseVisualStyleBackColor = true;
+            buttonOk.Click += buttonOk_Click;
             // 
             // textBox1
             // 
