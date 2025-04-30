@@ -46,13 +46,13 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(574, 283);
+            dataGridView1.Size = new Size(543, 283);
             dataGridView1.TabIndex = 0;
             // 
             // comboBoxHonap
             // 
             comboBoxHonap.FormattingEnabled = true;
-            comboBoxHonap.Location = new Point(64, 40);
+            comboBoxHonap.Location = new Point(64, 18);
             comboBoxHonap.Name = "comboBoxHonap";
             comboBoxHonap.Size = new Size(202, 23);
             comboBoxHonap.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 43);
+            label1.Location = new Point(12, 21);
             label1.Name = "label1";
             label1.Size = new Size(46, 15);
             label1.TabIndex = 2;
@@ -74,7 +74,7 @@
             buttonExport.BackColor = Color.SlateGray;
             buttonExport.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonExport.ForeColor = Color.White;
-            buttonExport.Location = new Point(382, 12);
+            buttonExport.Location = new Point(351, 12);
             buttonExport.Name = "buttonExport";
             buttonExport.Size = new Size(204, 56);
             buttonExport.TabIndex = 3;
@@ -85,7 +85,7 @@
             // buttonBezaras
             // 
             buttonBezaras.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonBezaras.Location = new Point(477, 407);
+            buttonBezaras.Location = new Point(446, 407);
             buttonBezaras.Name = "buttonBezaras";
             buttonBezaras.Size = new Size(109, 31);
             buttonBezaras.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(598, 450);
+            ClientSize = new Size(567, 450);
             Controls.Add(buttonBezaras);
             Controls.Add(buttonExport);
             Controls.Add(label1);

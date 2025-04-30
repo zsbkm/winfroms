@@ -215,10 +215,11 @@ namespace Coaches
 
         private void buttonBerszamfejtes_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormBerszamfejtes bsz = new();
             if(bsz.ShowDialog() == DialogResult.Cancel)
             {
-                this.Close();
+                this.Show();
             }
         }
     }
