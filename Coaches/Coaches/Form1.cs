@@ -1,4 +1,5 @@
 using Coaches.Models;
+using System.Diagnostics;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Coaches
@@ -98,14 +99,33 @@ namespace Coaches
 
         private void buttonAddNewCoach_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormAdd fan = new FormAdd();
-            if (fan.ShowDialog() == DialogResult.OK)
-            {
-                _context.SzemelyiEdzok.Add(fan.ujEdzo);
-                Mentes();
-                EdzokBetoltese();
-            }
+             var confirmResult = MessageBox.Show(
+                        $"Elõször regisztrálni kell az edzõt a weboldalon, ezt megtette már?",
+                        "Érvénytelen mûvelet",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+             if (confirmResult == DialogResult.Yes)
+             {
+                 this.Hide();
+                 FormAdd fan = new FormAdd();
+                 if (fan.ShowDialog() == DialogResult.OK)
+                 {
+                     _context.SzemelyiEdzok.Add(fan.ujEdzo);
+                     Mentes();
+                     EdzokBetoltese();
+                 }
+             }
+             if(confirmResult == DialogResult.No)
+             {
+                 Process.Start(new ProcessStartInfo
+                 {
+                     FileName = "http://rendfejl1000.northeurope.cloudapp.azure.com:8080/Regisztracio?returnurl=http%3a%2f%2frendfejl1000.northeurope.cloudapp.azure.com%3a8080%2f",
+                     UseShellExecute = true
+                 });
+             } 
+            
+            
+            
             this.Show();
         }
 
@@ -190,5 +210,7 @@ namespace Coaches
         {
             this.Close();
         }
-    }
+   
+    
+}
 }

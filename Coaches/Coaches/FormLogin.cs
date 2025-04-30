@@ -39,6 +39,11 @@ namespace Coaches
                 
 
             }
+            else
+            {
+                label5.Visible = true;
+                label5.Text = ("Érvénytelen felhasználónév vagy jelszó!");
+            }
         }
     }
 }

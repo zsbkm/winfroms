@@ -35,6 +35,7 @@
             label2 = new Label();
             label4 = new Label();
             label3 = new Label();
+            label5 = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -59,7 +60,7 @@
             // 
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(165, 342);
+            button1.Location = new Point(165, 344);
             button1.Name = "button1";
             button1.Size = new Size(246, 37);
             button1.TabIndex = 2;
@@ -119,12 +120,26 @@
             label3.Text = "Bejelentkezési felület";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = SystemColors.ButtonHighlight;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.Red;
+            label5.Location = new Point(165, 146);
+            label5.Name = "label5";
+            label5.Size = new Size(52, 21);
+            label5.TabIndex = 8;
+            label5.Text = "label5";
+            label5.Visible = false;
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.logo_blurred;
             ClientSize = new Size(586, 487);
+            Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -149,5 +164,6 @@
         private Label label2;
         private Label label4;
         private Label label3;
+        private Label label5;
     }
 }

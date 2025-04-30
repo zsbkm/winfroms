@@ -47,5 +47,15 @@ namespace Coaches
             }
 
         }
+
+        private void buttonDNN_Click(object sender, EventArgs e)
+        {
+            FormDNNUsers formDNNUsers = new FormDNNUsers();
+            
+            if(formDNNUsers.ShowDialog() == DialogResult.OK)
+            {
+                formDNNUsers.Close();
+            }
+        }
     }
 }

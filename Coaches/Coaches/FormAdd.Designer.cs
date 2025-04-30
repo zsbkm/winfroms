@@ -61,6 +61,9 @@
             textBox1 = new TextBox();
             buttonOk = new Button();
             checkBox1 = new CheckBox();
+            label15 = new Label();
+            textBoxDNN = new TextBox();
+            buttonDNN = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
@@ -388,12 +391,44 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(443, 11);
+            label15.Name = "label15";
+            label15.Size = new Size(95, 17);
+            label15.TabIndex = 60;
+            label15.Text = "DNNAzonosító";
+            // 
+            // textBoxDNN
+            // 
+            textBoxDNN.Location = new Point(443, 32);
+            textBoxDNN.Name = "textBoxDNN";
+            textBoxDNN.Size = new Size(95, 25);
+            textBoxDNN.TabIndex = 61;
+            // 
+            // buttonDNN
+            // 
+            buttonDNN.BackColor = Color.Snow;
+            buttonDNN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonDNN.ForeColor = Color.Black;
+            buttonDNN.Location = new Point(544, 32);
+            buttonDNN.Name = "buttonDNN";
+            buttonDNN.Size = new Size(63, 23);
+            buttonDNN.TabIndex = 62;
+            buttonDNN.Text = "Lekérdez";
+            buttonDNN.UseVisualStyleBackColor = false;
+            buttonDNN.Click += buttonDNN_Click;
+            // 
             // FormAdd
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(668, 510);
+            Controls.Add(buttonDNN);
+            Controls.Add(textBoxDNN);
+            Controls.Add(label15);
             Controls.Add(checkBox1);
             Controls.Add(label14);
             Controls.Add(textBox14);
@@ -468,5 +503,8 @@
         private Button buttonOk;
         private BindingSource bindingSource1;
         private CheckBox checkBox1;
+        private Label label15;
+        private TextBox textBoxDNN;
+        private Button buttonDNN;
     }
 }
