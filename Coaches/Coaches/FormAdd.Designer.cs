@@ -374,7 +374,7 @@
             buttonOk.Name = "buttonOk";
             buttonOk.Size = new Size(87, 31);
             buttonOk.TabIndex = 18;
-            buttonOk.Text = "Ok";
+            buttonOk.Text = "Mentés";
             buttonOk.UseVisualStyleBackColor = true;
             buttonOk.Click += buttonOk_Click;
             // 
