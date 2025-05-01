@@ -11,6 +11,7 @@ namespace Coaches
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             szemelyiEdzokBindingSource.DataSource = _context.SzemelyiEdzok.ToList();
             //label1.Text = "Edzõk szûrése:";
 

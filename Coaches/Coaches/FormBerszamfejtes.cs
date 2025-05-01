@@ -20,6 +20,7 @@ namespace Coaches
         public FormBerszamfejtes()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             Excel.ExcelPackage.LicenseContext = Excel.LicenseContext.NonCommercial;
 

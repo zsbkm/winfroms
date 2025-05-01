@@ -148,6 +148,8 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormLogin";
             Text = "FormLogin";
             Load += FormLogin_Load;

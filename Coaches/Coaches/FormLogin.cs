@@ -15,14 +15,13 @@ namespace Coaches
         public FormLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             textBox2.PasswordChar = '●';
             this.AcceptButton = button1;
 
-            int xPosition = (this.ClientSize.Width - label3.Width) / 2;
-
-            // A Label3 pozíciójának beállítása (az Y koordináta változatlan marad)
-            label3.Location = new Point(xPosition, label3.Location.Y);
+            
         }
+        
 
         private void FormLogin_Load(object sender, EventArgs e)
         {

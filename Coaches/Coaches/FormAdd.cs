@@ -20,6 +20,7 @@ namespace Coaches
         public FormAdd()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void FormAdd_Load(object sender, EventArgs e)

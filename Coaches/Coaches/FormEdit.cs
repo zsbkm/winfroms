@@ -19,6 +19,7 @@ namespace Coaches
         public FormEdit()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)
