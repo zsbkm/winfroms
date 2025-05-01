@@ -381,13 +381,14 @@
             // 
             // button1
             // 
-            button1.DialogResult = DialogResult.OK;
+            button1.DialogResult = DialogResult.Cancel;
             button1.Location = new Point(288, 341);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
             button1.Text = "Bezárás";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBoxEdzoSzuro
             // 
@@ -412,11 +413,11 @@
             // button2
             // 
             button2.DialogResult = DialogResult.OK;
-            button2.Location = new Point(209, 36);
+            button2.Location = new Point(265, 35);
             button2.Name = "button2";
-            button2.Size = new Size(142, 23);
+            button2.Size = new Size(98, 23);
             button2.TabIndex = 4;
-            button2.Text = "Id vágólapra másolása";
+            button2.Text = "Kiválaszt";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 

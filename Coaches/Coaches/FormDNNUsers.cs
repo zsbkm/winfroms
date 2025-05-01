@@ -14,9 +14,11 @@ namespace Coaches
     public partial class FormDNNUsers : Form
     {
         Models.MyDnndatabaseContext _context = new Models.MyDnndatabaseContext();
+        public Models.Users KivalasztottFelhasznalo = new();
         public FormDNNUsers()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
         }
 
@@ -38,10 +40,17 @@ namespace Coaches
             AdatBetoltes();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
-            var cb = usersBindingSource.Current as Models.Users;
-            Clipboard.SetText(cb.UserId.ToString());
+            KivalasztottFelhasznalo = usersBindingSource.Current as Models.Users;
+
+            /* var cb = usersBindingSource.Current as Models.Users;
+            Clipboard.SetText(cb.UserId.ToString()); */
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

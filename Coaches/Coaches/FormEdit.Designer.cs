@@ -108,6 +108,7 @@
             // 
             // buttonCancel
             // 
+            buttonCancel.CausesValidation = false;
             buttonCancel.Cursor = Cursors.Hand;
             buttonCancel.DialogResult = DialogResult.Cancel;
             buttonCancel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
