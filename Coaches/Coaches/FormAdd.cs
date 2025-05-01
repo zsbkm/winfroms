@@ -105,7 +105,7 @@ namespace Coaches
                 e.Cancel = true;
                 errorProvider1.SetError(textBox5, "Az email cím formátuma nem megfelelő");
             }
-            else { errorProvider1.SetError(textBox1, string.Empty); }
+            else { errorProvider1.SetError(textBox5, string.Empty); }
 
         }
 
@@ -114,7 +114,7 @@ namespace Coaches
 
             if (!CheckName(textBoxDNN.Text))
             {
-                e.Cancel = true;
+                //e.Cancel = true;
                 
                 errorProvider1.SetError(textBoxDNN, "Az azonosító nem lehet üres");
 
@@ -129,12 +129,18 @@ namespace Coaches
                 e.Cancel = true;
                 errorProvider1.SetError(textBox12, "Órabér megadása kötelező!");
             }
+            else if (!decimal.TryParse(textBox12.Text, out decimal oraber) || oraber <= 0)
+            {
+                
+                textBox12.Focus();
+                errorProvider1.SetError(textBox12, "Az órabér pozitív szám legyen!");
+            }
             else { errorProvider1.SetError(textBox12, string.Empty); }
         }
         private void buttonOk_Click(object sender, EventArgs e)
         {
 
-            if (this.ValidateChildren() )
+            if (this.ValidateChildren() && string.IsNullOrWhiteSpace(textBoxDNN.Text) == false)
             {
 
                 this.DialogResult = DialogResult.OK;
@@ -146,16 +152,6 @@ namespace Coaches
 
         }
 
-        /* 
-        private void buttonDNN_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Space)
-            {
-                // Megakadályozzuk a Space karakter beírását
-                e.SuppressKeyPress = true;
-                // Kiváltjuk a buttonDNN_Click eseményt
-                buttonDNN_Click(buttonDNN, EventArgs.Empty);
-            }
-        } */
+ 
     }
 }

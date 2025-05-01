@@ -377,7 +377,6 @@
             // buttonOk
             // 
             buttonOk.Cursor = Cursors.Hand;
-            buttonOk.DialogResult = DialogResult.OK;
             buttonOk.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonOk.Location = new Point(568, 469);
             buttonOk.Name = "buttonOk";
@@ -431,7 +430,6 @@
             buttonDNN.Text = "Keresés";
             buttonDNN.UseVisualStyleBackColor = false;
             buttonDNN.Click += buttonDNN_Click;
-            
             // 
             // errorProvider1
             // 
