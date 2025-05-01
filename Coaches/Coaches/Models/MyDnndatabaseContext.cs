@@ -553,9 +553,18 @@ public partial class MyDnndatabaseContext : DbContext
 
     public virtual DbSet<WorkflowStates> WorkflowStates { get; set; }
 
+    //  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    // #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+    // => optionsBuilder.UseSqlServer("Data Source=rendfejl1000.northeurope.cloudapp.azure.com;Initial Catalog=MyDNNDatabase;Persist Security Info=True;User ID=zsbkm;Password=zsbkmjelszo;Trust Server Certificate=True");
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=rendfejl1000.northeurope.cloudapp.azure.com;Initial Catalog=MyDNNDatabase;Persist Security Info=True;User ID=zsbkm;Password=zsbkmjelszo;Trust Server Certificate=True");
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer("Data Source=rendfejl1000.northeurope.cloudapp.azure.com;Initial Catalog=MyDNNDatabase;Persist Security Info=True;User ID=zsbkm;Password=zsbkmjelszo;Trust Server Certificate=True");
+        }
+    }
+
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
