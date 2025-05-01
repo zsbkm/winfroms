@@ -342,6 +342,7 @@
             // 
             // buttonCancel
             // 
+            buttonCancel.CausesValidation = false;
             buttonCancel.Cursor = Cursors.Hand;
             buttonCancel.DialogResult = DialogResult.Cancel;
             buttonCancel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
@@ -376,7 +377,6 @@
             // buttonOk
             // 
             buttonOk.Cursor = Cursors.Hand;
-            buttonOk.DialogResult = DialogResult.OK;
             buttonOk.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonOk.Location = new Point(568, 469);
             buttonOk.Name = "buttonOk";
@@ -423,11 +423,11 @@
             buttonDNN.BackColor = Color.Snow;
             buttonDNN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonDNN.ForeColor = Color.Black;
-            buttonDNN.Location = new Point(559, 32);
+            buttonDNN.Location = new Point(558, 34);
             buttonDNN.Name = "buttonDNN";
             buttonDNN.Size = new Size(63, 23);
             buttonDNN.TabIndex = 62;
-            buttonDNN.Text = "Lekérdez";
+            buttonDNN.Text = "Keresés";
             buttonDNN.UseVisualStyleBackColor = false;
             buttonDNN.Click += buttonDNN_Click;
             // 

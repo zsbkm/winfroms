@@ -91,6 +91,12 @@ namespace Coaches
                 e.Cancel = true;
                 errorProvider1.SetError(textBox12, "Órabér megadása kötelező!");
             }
+            else if (!decimal.TryParse(textBox12.Text, out decimal oraber) || oraber <= 0)
+            {
+
+                textBox12.Focus();
+                errorProvider1.SetError(textBox12, "Az órabér pozitív szám legyen!");
+            }
             else { errorProvider1.SetError(textBox12, string.Empty); }
         }
 

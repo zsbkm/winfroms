@@ -17,14 +17,20 @@ namespace Coaches
         Models.MyDnndatabaseContext _context = new Models.MyDnndatabaseContext();
 
         public SzemelyiEdzok ujEdzo = new();
+        int ell = 0;
+
+
         public FormAdd()
         {
             InitializeComponent();
+
             this.StartPosition = FormStartPosition.CenterScreen;
+
         }
 
         private void FormAdd_Load(object sender, EventArgs e)
         {
+
 
             bindingSource1.DataSource = ujEdzo;
 
@@ -56,16 +62,12 @@ namespace Coaches
 
             if (formDNNUsers.ShowDialog() == DialogResult.OK)
             {
+                textBoxDNN.Text = formDNNUsers.KivalasztottFelhasznalo.UserId.ToString();
                 formDNNUsers.Close();
             }
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
-        {
-            ujEdzo.DnnAzonosito = int.Parse(textBoxDNN.Text);
-            if (this.ValidateChildren())
-                this.DialogResult = DialogResult.OK;
-        }
+
 
 
         //REGEXEK
@@ -103,19 +105,21 @@ namespace Coaches
                 e.Cancel = true;
                 errorProvider1.SetError(textBox5, "Az email cím formátuma nem megfelelő");
             }
-            else { errorProvider1.SetError(textBox1, string.Empty); }
+            else { errorProvider1.SetError(textBox5, string.Empty); }
 
         }
 
         private void textBoxDNN_Validating(object sender, CancelEventArgs e)
         {
+
             if (!CheckName(textBoxDNN.Text))
             {
                 //e.Cancel = true;
+                
                 errorProvider1.SetError(textBoxDNN, "Az azonosító nem lehet üres");
-                buttonDNN.Focus();
+
             }
-            else { errorProvider1.SetError(textBoxDNN, string.Empty); }
+            else { errorProvider1.SetError(textBoxDNN, string.Empty);}
         }
 
         private void textBox12_Validating(object sender, CancelEventArgs e)
@@ -125,7 +129,29 @@ namespace Coaches
                 e.Cancel = true;
                 errorProvider1.SetError(textBox12, "Órabér megadása kötelező!");
             }
+            else if (!decimal.TryParse(textBox12.Text, out decimal oraber) || oraber <= 0)
+            {
+                
+                textBox12.Focus();
+                errorProvider1.SetError(textBox12, "Az órabér pozitív szám legyen!");
+            }
             else { errorProvider1.SetError(textBox12, string.Empty); }
         }
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+
+            if (this.ValidateChildren() && string.IsNullOrWhiteSpace(textBoxDNN.Text) == false)
+            {
+
+                this.DialogResult = DialogResult.OK;
+                ujEdzo.DnnAzonosito = int.Parse(textBoxDNN.Text);
+
+
+
+            }
+
+        }
+
+ 
     }
 }
