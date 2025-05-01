@@ -62,6 +62,7 @@
             textBox14 = new TextBox();
             checkBox1 = new CheckBox();
             errorProvider1 = new ErrorProvider(components);
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
@@ -269,6 +270,7 @@
             label9.Size = new Size(56, 17);
             label9.TabIndex = 19;
             label9.Text = "Sportok";
+            toolTip1.SetToolTip(label9, "Több sport esetén a formátum: trx;spinning;...");
             // 
             // textBox9
             // 
@@ -279,6 +281,7 @@
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(177, 25);
             textBox9.TabIndex = 7;
+            toolTip1.SetToolTip(textBox9, "Több sport esetén a formátum: trx;spinning;...");
             // 
             // label10
             // 
@@ -481,5 +484,6 @@
         private TextBox textBox14;
         private CheckBox checkBox1;
         private ErrorProvider errorProvider1;
+        private ToolTip toolTip1;
     }
 }
