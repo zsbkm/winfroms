@@ -137,6 +137,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(177, 25);
             textBox2.TabIndex = 2;
+            textBox2.Validating += textBox2_Validating;
             // 
             // label3
             // 
@@ -157,6 +158,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(177, 25);
             textBox3.TabIndex = 4;
+            textBox3.Validating += textBox3_Validating;
             // 
             // label4
             // 
@@ -177,6 +179,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(177, 25);
             textBox4.TabIndex = 3;
+            textBox4.Validating += textBox4_Validating;
             // 
             // label5
             // 
@@ -239,6 +242,7 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(409, 118);
             textBox7.TabIndex = 13;
+            textBox7.Validating += textBox7_Validating;
             // 
             // label8
             // 
@@ -282,6 +286,7 @@
             textBox9.Size = new Size(177, 25);
             textBox9.TabIndex = 7;
             toolTip1.SetToolTip(textBox9, "Több sport esetén a formátum: trx;spinning;...");
+            textBox9.Validating += textBox9_Validating;
             // 
             // label10
             // 
@@ -302,6 +307,7 @@
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(177, 25);
             textBox10.TabIndex = 8;
+            textBox10.Validating += textBox10_Validating;
             // 
             // label11
             // 
@@ -322,6 +328,7 @@
             textBox11.Name = "textBox11";
             textBox11.Size = new Size(409, 25);
             textBox11.TabIndex = 12;
+            textBox11.Validating += textBox11_Validating;
             // 
             // label12
             // 
@@ -363,6 +370,7 @@
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(409, 25);
             textBox13.TabIndex = 10;
+            textBox13.Validating += textBox13_Validating;
             // 
             // label14
             // 
@@ -383,6 +391,7 @@
             textBox14.Name = "textBox14";
             textBox14.Size = new Size(409, 25);
             textBox14.TabIndex = 11;
+            textBox14.Validating += textBox14_Validating;
             // 
             // checkBox1
             // 
@@ -440,6 +449,7 @@
             Controls.Add(textBox1);
             Controls.Add(buttonOk);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "FormEdit";
             Text = "FormEdit";
             Load += FormEdit_Load;

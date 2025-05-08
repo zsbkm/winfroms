@@ -94,7 +94,7 @@ namespace Coaches
 
         private bool CheckSport(string input)
         {
-            Regex r = new Regex(@"^[a-zA-Z;]+$");
+            Regex r = new Regex(@"^[\p{L};]+$");
             return r.IsMatch(input);
         }
 
@@ -176,6 +176,9 @@ namespace Coaches
         }
 
         //Facebookra nincs, nem biztos, hogy van az illetőnek
+
+        //Sportok
+
 
         //Email
         private void textBox5_Validating(object sender, CancelEventArgs e)

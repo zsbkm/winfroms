@@ -487,6 +487,7 @@
             Controls.Add(buttonOk);
             Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "FormAdd";
             Text = "FormAdd";
             Load += FormAdd_Load;
