@@ -70,73 +70,249 @@ namespace Coaches
 
 
 
-        //REGEXEK
+        //REGEXEK és VALIDÁLÁSOK
 
-        private bool CheckName(string név)
+        private bool CheckEmpty(string név)
         {
             return !string.IsNullOrEmpty(név);
         }
-        private void textBox1_Validating(object sender, CancelEventArgs e)
-        {
-            if (!CheckName(textBox1.Text))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(textBox1, "A név nem lehet üres");
-            }
-            else { errorProvider1.SetError(textBox1, string.Empty); }
-        }
-
-
         private bool CheckEmail(string email)
         {
             Regex r = new Regex(@"^[\w\.-]+@[\w\.-]+\.\w+$");
             return r.IsMatch(email);
         }
+        private bool CheckDate(string date)
+        {
+            Regex r = new Regex(@"^\d{4}\.\d{2}\.\d{2}\.$");
+            return r.IsMatch(date);
+        }
+        private bool CheckPhoneNumber(string phoneNumber)
+        {
+            Regex r = new Regex(@"^\+36\d{9}$");
+            return r.IsMatch(phoneNumber);
+        }
+
+        private bool CheckSport(string input)
+        {
+            Regex r = new Regex(@"^[a-zA-Z;]+$");
+            return r.IsMatch(input);
+        }
+
+        private bool CheckNapszak(string input)
+        {
+            Regex r = new Regex(@"^(de|du|egesznap)$");
+            return r.IsMatch(input);
+        }
+        private bool CheckSzamla(string input)
+        {
+            Regex r = new Regex(@"^\d{8}-\d{4}-\d{4}$");
+            return r.IsMatch(input);
+        }
+
+        private bool CheckAdo(string input)
+        {
+            Regex r = new Regex(@"^\d{10}$");
+            return r.IsMatch(input);
+        }
+
+
+
+
+        //Nev
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (!CheckEmpty(textBox1.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox1, "A név nem lehet üres!");
+            }
+            else { errorProvider1.SetError(textBox1, string.Empty); }
+        }
+
+        //Szulhely
+        private void textBox2_Validating(object sender, CancelEventArgs e)
+        {
+            if (!CheckEmpty(textBox2.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox2, "A születési hely megadása kötelező!");
+            }
+            else { errorProvider1.SetError(textBox2, string.Empty); }
+
+        }
+
+        //Szulido
+        private void textBox4_Validating(object sender, CancelEventArgs e)
+        {
+            if (!CheckEmpty(textBox4.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox4, "A születési hely megadása kötelező!");
+            }
+            if (!CheckDate(textBox4.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox4, "A formátum nem megfelelő!");
+            }
+
+            else { errorProvider1.SetError(textBox4, string.Empty); }
+        }
+
+        //Telefon
+        private void textBox3_Validating(object sender, CancelEventArgs e)
+        {
+            if (!CheckEmpty(textBox3.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox3, "Telefonszám megadása kötelező!");
+            }
+            if (!CheckPhoneNumber(textBox3.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox3, "A formátum nem megfelelő");
+            }
+
+            else { errorProvider1.SetError(textBox3, string.Empty); }
+        }
+
+        //Facebookra nincs, nem biztos, hogy van az illetőnek
+
+        //Email
         private void textBox5_Validating(object sender, CancelEventArgs e)
         {
 
-            if (!CheckName(textBox5.Text))
+            if (!CheckEmpty(textBox5.Text))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(textBox5, "Az email cím megadása kötelező");
+                errorProvider1.SetError(textBox5, "Az email cím megadása kötelező!");
             }
             if (!CheckEmail(textBox5.Text))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(textBox5, "Az email cím formátuma nem megfelelő");
+                errorProvider1.SetError(textBox5, "Az email cím formátuma nem megfelelő!");
             }
             else { errorProvider1.SetError(textBox5, string.Empty); }
 
         }
 
-        private void textBoxDNN_Validating(object sender, CancelEventArgs e)
+        //Sportok
+        private void textBox9_Validating(object sender, CancelEventArgs e)
         {
-
-            if (!CheckName(textBoxDNN.Text))
+            if (!CheckEmpty(textBox9.Text))
             {
-                //e.Cancel = true;
-                
-                errorProvider1.SetError(textBoxDNN, "Az azonosító nem lehet üres");
-
+                e.Cancel = true;
+                errorProvider1.SetError(textBox9, "Sport(ok) megadása kötelező!");
             }
-            else { errorProvider1.SetError(textBoxDNN, string.Empty);}
+            if (!CheckSport(textBox9.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox9, "A sport(ok) formátuma nem megfelelő!");
+            }
+            else { errorProvider1.SetError(textBox9, string.Empty); }
         }
 
+        //Napszak
+        private void textBox10_Validating(object sender, CancelEventArgs e)
+        {
+            if (!CheckEmpty(textBox10.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox10, "A napszak megadása kötelező!");
+            }
+            if (!CheckNapszak(textBox10.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox10, "A napszak nem megfelelő!");
+            }
+            else { errorProvider1.SetError(textBox10, string.Empty); }
+        }
+
+        //Oraber
         private void textBox12_Validating(object sender, CancelEventArgs e)
         {
-            if (!CheckName(textBox12.Text))
+            if (!CheckEmpty(textBox12.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox12, "Órabér megadása kötelező!");
             }
             else if (!decimal.TryParse(textBox12.Text, out decimal oraber) || oraber <= 0)
             {
-                
+
                 textBox12.Focus();
                 errorProvider1.SetError(textBox12, "Az órabér pozitív szám legyen!");
             }
             else { errorProvider1.SetError(textBox12, string.Empty); }
         }
+
+        //DNN
+        private void textBoxDNN_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (!CheckEmpty(textBoxDNN.Text))
+            {
+                //e.Cancel = true;
+
+                errorProvider1.SetError(textBoxDNN, "Az azonosító nem lehet üres");
+
+            }
+            else { errorProvider1.SetError(textBoxDNN, string.Empty); }
+        }
+
+        //Bszla
+        private void textBox13_Validating(object sender, CancelEventArgs e)
+        {
+            if (!CheckEmpty(textBox13.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox13, "Számlaszám megadása kötelező!");
+            }
+            if (!CheckSzamla(textBox13.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox13, "A számla formátuma nem megfelelő!");
+            }
+            else { errorProvider1.SetError(textBox13, string.Empty); }
+        }
+
+        //Ado
+        private void textBox14_Validating(object sender, CancelEventArgs e)
+        {
+            if (!CheckEmpty(textBox14.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox14, "Adójel megadása kötelező!");
+            }
+            if (!CheckAdo(textBox14.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox14, "Az adójel formátuma nem megfelelő!");
+            }
+            else { errorProvider1.SetError(textBox14, string.Empty); }
+        }
+
+        //Lakcim
+        private void textBox11_Validating(object sender, CancelEventArgs e)
+        {
+            if (!CheckEmpty(textBox11.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox11, "Lakcím megadása kötelező!");
+            }
+            else { errorProvider1.SetError(textBox11, string.Empty); }
+        }
+
+        //Bio
+        private void textBox7_Validating(object sender, CancelEventArgs e)
+        {
+            if (!CheckEmpty(textBox7.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox7, "Bio megadása kötelező!");
+            }
+            else { errorProvider1.SetError(textBox7, string.Empty); }
+        }
+
+        //Mentes
         private void buttonOk_Click(object sender, EventArgs e)
         {
 
@@ -152,6 +328,11 @@ namespace Coaches
 
         }
 
- 
+        private void textBox2_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

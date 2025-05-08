@@ -89,6 +89,7 @@
             textBox14.Name = "textBox14";
             textBox14.Size = new Size(409, 25);
             textBox14.TabIndex = 12;
+            textBox14.Validating += textBox14_Validating;
             // 
             // bindingSource1
             // 
@@ -113,6 +114,7 @@
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(409, 25);
             textBox13.TabIndex = 11;
+            textBox13.Validating += textBox13_Validating;
             // 
             // label12
             // 
@@ -154,6 +156,7 @@
             textBox11.Name = "textBox11";
             textBox11.Size = new Size(409, 25);
             textBox11.TabIndex = 13;
+            textBox11.Validating += textBox11_Validating;
             // 
             // label10
             // 
@@ -161,9 +164,9 @@
             label10.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label10.Location = new Point(12, 388);
             label10.Name = "label10";
-            label10.Size = new Size(59, 17);
+            label10.Size = new Size(173, 17);
             label10.TabIndex = 51;
-            label10.Text = "Napszak";
+            label10.Text = "Napszak (de, du, egesznap)";
             // 
             // textBox10
             // 
@@ -174,6 +177,7 @@
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(177, 25);
             textBox10.TabIndex = 8;
+            textBox10.Validating += textBox10_Validating;
             // 
             // label9
             // 
@@ -196,6 +200,7 @@
             textBox9.Size = new Size(177, 25);
             textBox9.TabIndex = 7;
             toolTip1.SetToolTip(textBox9, "Több sport esetén a formátum: trx;spinning;...");
+            textBox9.Validating += textBox9_Validating;
             // 
             // label8
             // 
@@ -238,6 +243,7 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(409, 133);
             textBox7.TabIndex = 14;
+            textBox7.Validating += textBox7_Validating;
             // 
             // label6
             // 
@@ -286,9 +292,9 @@
             label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(12, 121);
             label4.Name = "label4";
-            label4.Size = new Size(83, 17);
+            label4.Size = new Size(180, 17);
             label4.TabIndex = 39;
-            label4.Text = "Születési idő";
+            label4.Text = "Születési idő  (YYYY.MM.DD.)";
             // 
             // textBox4
             // 
@@ -299,6 +305,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(177, 25);
             textBox4.TabIndex = 3;
+            textBox4.Validating += textBox4_Validating;
             // 
             // label3
             // 
@@ -319,6 +326,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(177, 25);
             textBox3.TabIndex = 4;
+            textBox3.Validating += textBox3_Validating;
             // 
             // label2
             // 
@@ -339,6 +347,8 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(177, 25);
             textBox2.TabIndex = 2;
+            textBox2.Validating += textBox2_Validating;
+            textBox2.Validated += textBox2_Validated;
             // 
             // buttonCancel
             // 
