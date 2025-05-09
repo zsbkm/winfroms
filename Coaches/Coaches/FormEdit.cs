@@ -60,7 +60,7 @@ namespace Coaches
         }
         private bool CheckDate(string date)
         {
-            Regex r = new Regex(@"^\d{4}\.\d{2}\.\d{2}\.$");
+            Regex r = new Regex(@"^\d{4}\.\s?\d{2}\.\s?\d{2}\.\s?$");
             return r.IsMatch(date);
         }
         private bool CheckPhoneNumber(string phoneNumber)

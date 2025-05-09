@@ -81,11 +81,20 @@ namespace Coaches
             Regex r = new Regex(@"^[\w\.-]+@[\w\.-]+\.\w+$");
             return r.IsMatch(email);
         }
+
+        /*
         private bool CheckDate(string date)
         {
             Regex r = new Regex(@"^\d{4}\.\d{2}\.\d{2}\.$");
             return r.IsMatch(date);
+        } */
+
+        private bool CheckDate(string date)
+        {
+            Regex r = new Regex(@"^\d{4}\.\s?\d{2}\.\s?\d{2}\.\s?$");
+            return r.IsMatch(date);
         }
+
         private bool CheckPhoneNumber(string phoneNumber)
         {
             Regex r = new Regex(@"^\+36\d{9}$");
