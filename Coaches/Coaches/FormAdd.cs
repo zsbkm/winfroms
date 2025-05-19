@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -345,6 +346,25 @@ namespace Coaches
 
         }
 
-       
+        private void buttonPic_Click(object sender, EventArgs e)
+        {
+            var maxID = (from x in _context.SzemelyiEdzok
+                            select x.Id).Max() +1;
+
+            try
+            {
+                // Hálózati útvonal a fájlkezelőhöz
+                string networkPath = @"\\rendfejl1000.northeurope.cloudapp.azure.com\edzokepek";
+
+                // Windows Fájlkezelő megnyitása
+                Process.Start("explorer.exe", networkPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hiba történt a fájlkezelő megnyitásakor: {ex.Message}\nStackTrace: {ex.StackTrace}",
+                    "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            MessageBox.Show("A kép neve legyen: " + maxID + ".png");
+        }
     }
 }

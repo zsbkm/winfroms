@@ -66,6 +66,7 @@
             buttonDNN = new Button();
             errorProvider1 = new ErrorProvider(components);
             toolTip1 = new ToolTip(components);
+            buttonPic = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
@@ -445,12 +446,23 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // buttonPic
+            // 
+            buttonPic.Location = new Point(12, 458);
+            buttonPic.Name = "buttonPic";
+            buttonPic.Size = new Size(177, 40);
+            buttonPic.TabIndex = 63;
+            buttonPic.Text = "Képfeltötlés";
+            buttonPic.UseVisualStyleBackColor = true;
+            buttonPic.Click += buttonPic_Click;
+            // 
             // FormAdd
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
             ClientSize = new Size(668, 510);
+            Controls.Add(buttonPic);
             Controls.Add(buttonDNN);
             Controls.Add(textBoxDNN);
             Controls.Add(label15);
@@ -535,5 +547,6 @@
         private Button buttonDNN;
         private ErrorProvider errorProvider1;
         private ToolTip toolTip1;
+        private Button buttonPic;
     }
 }

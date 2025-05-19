@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace Coaches
     public partial class FormEdit : Form
     {
         public SzemelyiEdzok szemelyiEdzok;
+        Models.MyDnndatabaseContext _context = new Models.MyDnndatabaseContext();
         public FormEdit()
         {
             InitializeComponent();
@@ -280,6 +282,25 @@ namespace Coaches
                 this.DialogResult = DialogResult.OK;
         }
 
-        
+        private void buttonPic_Click(object sender, EventArgs e)
+        {
+            var id = szemelyiEdzok.Id;
+            try
+            {
+                MessageBox.Show("A kép neve legyen: " + id + ".png");
+                // Hálózati útvonal a fájlkezelőhöz
+                string networkPath = @"\\rendfejl1000.northeurope.cloudapp.azure.com\edzokepek";
+
+                // Windows Fájlkezelő megnyitása
+                Process.Start("explorer.exe", networkPath);
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hiba történt a fájlkezelő megnyitásakor: {ex.Message}\nStackTrace: {ex.StackTrace}",
+                    "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
     }
 }
